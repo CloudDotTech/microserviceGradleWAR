@@ -10,15 +10,15 @@ phases:
   build:
     commands:
       - echo Build started .....
-      - gradle build
+      - gradle clean build
 
   post_build:
     commands:
       - echo Build completed on `date`
 artifacts:
   files:
-    - target/bike-service-0.0.1-SNAPSHOT.war
-    - scripts/*
+    - build/libs/microserviceGradleWAR.war
+
 
 
 #version: 0.2
