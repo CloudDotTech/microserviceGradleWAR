@@ -9,7 +9,7 @@ phases:
 
   build:
     commands:
-      - echo Build started on `date`
+      - echo Build started .....
       - mvn clean
 
   post_build:
