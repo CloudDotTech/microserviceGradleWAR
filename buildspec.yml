@@ -3,6 +3,10 @@ phases:
   install:
     runtime-versions:
       java: corretto8
+    commands:
+      - java -version
+      - gradle -version
+
   pre_build:
     commands:
       - echo In the pre_build phase...
@@ -11,10 +15,13 @@ phases:
     commands:
       - echo Build started .....
       - gradle clean build
+      - echo In the build phase gradlew...
+      - ./gradlew clean build
 
   post_build:
     commands:
       - echo Build completed on `date`
+
 artifacts:
   files:
     - build/libs/microserviceGradleWAR.war
