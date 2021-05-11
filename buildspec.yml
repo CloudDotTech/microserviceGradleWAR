@@ -1,26 +1,49 @@
 version: 0.2
-
 phases:
   install:
     runtime-versions:
-      java: corretto8
+      java: corretto11
+  pre_build:
     commands:
-      - echo Entered the install phase...
-      - apt-get update -y
+      - echo In the pre_build phase...
 
   build:
     commands:
       - echo Build started on `date`
-      - echo Entered the build phase...
       - mvn clean
 
   post_build:
     commands:
       - echo Build completed on `date`
-      - mvn package
-
 artifacts:
   files:
-    - build/libs/microserviceGradleWAR.war
-    - appspec.yml
-  discard-paths: yes
+    - target/bike-service-0.0.1-SNAPSHOT.war
+    - scripts/*
+
+
+#version: 0.2
+#
+#phases:
+#  install:
+#    runtime-versions:
+#      java: corretto8
+#    commands:
+#      - echo Entered the install phase...
+#      - apt-get update -y
+#
+#  build:
+#    commands:
+#      - echo Build started on `date`
+#      - echo Entered the build phase...
+#      - mvn clean
+#
+#  post_build:
+#    commands:
+#      - echo Build completed on `date`
+#      - mvn package
+#
+#artifacts:
+#  files:
+#    - build/libs/microserviceGradleWAR.war
+#    - appspec.yml
+#  discard-paths: yes
