@@ -15,6 +15,6 @@ public class MicroserviceGradleWarApplication {
 
     @RequestMapping(value = "/")
     public String hello() {
-        return "Hello Microservice Gradle WAR!";
+        return "Hello Microservice Gradle WAR !!!";
     }
 }
